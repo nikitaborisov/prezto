@@ -45,6 +45,18 @@ if (( $+commands[virtualenvwrapper.sh] )); then
   source "$commands[virtualenvwrapper.sh]"
 fi
 
+# Ubuntu virtualenvwrapper
+if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
+
+  # Set the directory where virtual environments are stored.
+  export WORKON_HOME="$HOME/.virtualenvs"
+
+  # Disable the virtualenv prompt.
+  VIRTUAL_ENV_DISABLE_PROMPT=1
+
+  source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
 #
 # Aliases
 #
